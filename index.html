@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>קורס איפור מקצועי אישי | רבקה אסידון</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FAF7F4;
+    --nude:#EFE3DA;
+    --rose:#C9A898;
+    --rose-deep:#A88070;
+    --gold:#D9B98A;
+    --text:#4A3B33;
+    --text-soft:#8A7A70;
+    --white:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Heebo',sans-serif;
+    background:var(--cream);
+    color:var(--text);
+    line-height:1.7;
+    overflow-x:hidden;
+  }
+  .accent-serif{font-family:'Playfair Display',serif;font-style:italic;}
+
+  .container{max-width:980px;margin:0 auto;padding:0 24px;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    min-height:92vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(216,184,154,0.25), transparent 45%),
+      radial-gradient(circle at 80% 75%, rgba(201,168,152,0.3), transparent 50%),
+      linear-gradient(180deg, var(--cream) 0%, var(--nude) 100%);
+    padding:120px 24px 80px;
+  }
+  .hero::before, .hero::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    opacity:0.5;
+    filter:blur(2px);
+  }
+  .hero::before{
+    width:14px;height:14px;background:var(--gold);
+    top:18%; left:12%;
+    animation:float 7s ease-in-out infinite;
+  }
+  .hero::after{
+    width:10px;height:10px;background:var(--rose-deep);
+    bottom:22%; right:14%;
+    animation:float 9s ease-in-out infinite reverse;
+  }
+  @keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-18px);}
+  }
+  .hero-eyebrow{
+    display:inline-block;
+    font-size:14px;
+    letter-spacing:2px;
+    color:var(--rose-deep);
+    text-transform:uppercase;
+    margin-bottom:22px;
+    font-weight:600;
+    border-bottom:1px solid var(--rose);
+    padding-bottom:6px;
+    opacity:0;
+    animation:fadeUp .8s ease forwards;
+    animation-delay:.1s;
+  }
+  .hero h1{
+    font-size:clamp(34px, 6vw, 56px);
+    font-weight:800;
+    color:var(--text);
+    margin-bottom:18px;
+    opacity:0;
+    animation:fadeUp .8s ease forwards;
+    animation-delay:.25s;
+  }
+  .hero h1 span{
+    display:block;
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-weight:400;
+    color:var(--rose-deep);
+    font-size:clamp(24px, 4vw, 36px);
+    margin-top:8px;
+  }
+  .hero p.lead{
+    max-width:600px;
+    margin:0 auto 30px;
+    font-size:18px;
+    color:var(--text-soft);
+    opacity:0;
+    animation:fadeUp .8s ease forwards;
+    animation-delay:.4s;
+  }
+  @keyframes fadeUp{
+    from{opacity:0; transform:translateY(16px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  .hero-meta{
+    display:flex;
+    gap:26px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:36px;
+    opacity:0;
+    animation:fadeUp .8s ease forwards;
+    animation-delay:.55s;
+  }
+  .hero-meta div{
+    text-align:center;
+  }
+  .hero-meta .num{
+    font-size:24px;
+    font-weight:700;
+    color:var(--rose-deep);
+    display:block;
+  }
+  .hero-meta .lbl{
+    font-size:13px;
+    color:var(--text-soft);
+  }
+  .divider-dot{
+    width:1px;height:36px;background:var(--rose);align-self:center;
+  }
+  .hero-price-tag{
+    display:inline-block;
+    background:var(--white);
+    border:1px solid var(--rose);
+    border-radius:50px;
+    padding:8px 22px;
+    font-size:14px;
+    color:var(--rose-deep);
+    font-weight:600;
+    margin-bottom:30px;
+    opacity:0;
+    animation:fadeUp .8s ease forwards;
+    animation-delay:.6s;
+  }
+
+  /* ===== BUTTONS ===== */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:linear-gradient(135deg, var(--rose-deep), var(--rose));
+    color:#fff;
+    padding:16px 38px;
+    border-radius:50px;
+    font-size:16px;
+    font-weight:600;
+    text-decoration:none;
+    box-shadow:0 10px 30px rgba(168,128,112,0.35);
+    transition:transform .25s ease, box-shadow .25s ease;
+    opacity:0;
+    animation:fadeUp .8s ease forwards;
+    animation-delay:.7s;
+  }
+  .btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 14px 36px rgba(168,128,112,0.45);
+  }
+  .btn svg{width:20px;height:20px;flex-shrink:0;}
+
+  /* ===== SECTION HEADERS ===== */
+  section{padding:90px 0;}
+  .sec-head{
+    text-align:center;
+    max-width:640px;
+    margin:0 auto 60px;
+  }
+  .sec-eyebrow{
+    color:var(--rose-deep);
+    font-weight:600;
+    letter-spacing:1.5px;
+    font-size:13px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+    display:block;
+  }
+  .sec-head h2{
+    font-size:clamp(28px,4vw,38px);
+    font-weight:800;
+  }
+  .sec-head p{
+    color:var(--text-soft);
+    margin-top:14px;
+    font-size:16px;
+  }
+
+  .reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:opacity .8s ease, transform .8s ease;
+  }
+  .reveal.show{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  /* ===== ABOUT ===== */
+  .about{
+    background:var(--white);
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+  }
+  .about-card{
+    background:var(--cream);
+    border-radius:24px;
+    padding:40px;
+    border:1px solid var(--nude);
+  }
+  .about-card h3{
+    font-size:22px;
+    margin-bottom:16px;
+    color:var(--rose-deep);
+  }
+  .about-card p{color:var(--text-soft);}
+  .quote-block{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-size:22px;
+    color:var(--text);
+    border-right:3px solid var(--gold);
+    padding-right:20px;
+  }
+  @media(max-width:760px){
+    .about-grid{grid-template-columns:1fr;}
+  }
+
+  /* ===== TIMELINE / SESSIONS ===== */
+  .timeline{
+    position:relative;
+  }
+  .timeline-line{
+    position:absolute;
+    top:0; bottom:0;
+    right:calc(50% - 1px);
+    width:2px;
+    background:linear-gradient(180deg, transparent, var(--rose), var(--rose), transparent);
+  }
+  .session{
+    display:grid;
+    grid-template-columns:1fr 60px 1fr;
+    align-items:center;
+    gap:0;
+    margin-bottom:54px;
+  }
+  .session-num{
+    width:54px;height:54px;
+    border-radius:50%;
+    background:var(--white);
+    border:2px solid var(--rose);
+    color:var(--rose-deep);
+    font-weight:800;
+    font-size:18px;
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto;
+    position:relative;
+    z-index:2;
+    box-shadow:0 6px 18px rgba(168,128,112,.18);
+  }
+  .session-card{
+    background:var(--white);
+    border-radius:20px;
+    padding:30px 34px;
+    box-shadow:0 10px 30px rgba(74,59,51,0.06);
+    border:1px solid var(--nude);
+  }
+  .session-card h4{
+    font-size:19px;
+    margin-bottom:8px;
+    color:var(--text);
+  }
+  .session-card h4 small{
+    display:block;
+    color:var(--rose-deep);
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:1px;
+    margin-bottom:6px;
+    text-transform:uppercase;
+  }
+  .session-card p{
+    color:var(--text-soft);
+    font-size:15px;
+  }
+  .session:nth-child(even) .session-card{grid-column:1;}
+  .session:nth-child(even) .session-spacer{grid-column:3;}
+  .session:nth-child(odd) .session-spacer{grid-column:1;}
+  .session:nth-child(odd) .session-card{grid-column:3;}
+
+  @media(max-width:760px){
+    .timeline-line{right:27px;}
+    .session{
+      grid-template-columns:54px 1fr;
+      gap:18px;
+    }
+    .session-num{margin:0;}
+    .session:nth-child(odd) .session-card,
+    .session:nth-child(even) .session-card{grid-column:2; grid-row:1;}
+    .session-spacer{display:none;}
+  }
+
+  /* ===== KIT HIGHLIGHT ===== */
+  .kit{
+    background:var(--white);
+  }
+  .kit-box{
+    background:linear-gradient(135deg, var(--rose-deep), var(--rose));
+    border-radius:28px;
+    padding:50px;
+    color:#fff;
+    display:grid;
+    grid-template-columns:1fr 220px;
+    align-items:center;
+    gap:30px;
+    box-shadow:0 25px 50px rgba(168,128,112,0.3);
+  }
+  .kit-box h3{font-size:26px;margin-bottom:14px;font-weight:800;}
+  .kit-box p{opacity:.92;font-size:15px;}
+  .kit-value{
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.35);
+    border-radius:20px;
+    padding:26px 18px;
+    text-align:center;
+  }
+  .kit-value .price{
+    font-size:30px;font-weight:800;
+    background:linear-gradient(90deg, #fff, #FBE9CE, #fff);
+    background-size:200% auto;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    animation:textShine 3s linear infinite;
+  }
+  @keyframes textShine{
+    0%{background-position:0% center;}
+    100%{background-position:200% center;}
+  }
+  .kit-value .lbl{font-size:13px;opacity:.85;margin-top:4px;}
+  @media(max-width:760px){
+    .kit-box{grid-template-columns:1fr; text-align:center;}
+  }
+
+  /* ===== INCLUDES (checklist) ===== */
+  .includes{background:var(--cream);}
+  .checklist{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px 30px;
+    background:var(--white);
+    border-radius:28px;
+    padding:46px;
+    border:1px solid var(--nude);
+  }
+  .check-item{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    font-size:15px;
+    color:var(--text);
+  }
+  .check-item .mark{
+    width:24px;height:24px;
+    border-radius:50%;
+    background:linear-gradient(135deg, var(--rose), var(--gold));
+    color:#fff;
+    flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    font-size:13px;
+    margin-top:2px;
+  }
+  @media(max-width:760px){
+    .checklist{grid-template-columns:1fr; padding:30px 24px;}
+  }
+
+  /* ===== SELF PRACTICE ===== */
+  .practice{
+    background:var(--white);
+  }
+  .practice-wrap{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:50px;
+    align-items:center;
+  }
+  .practice-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .practice-tags span{
+    background:var(--cream);
+    border:1px solid var(--nude);
+    color:var(--rose-deep);
+    font-size:13px;
+    font-weight:600;
+    padding:9px 16px;
+    border-radius:50px;
+  }
+  @media(max-width:760px){
+    .practice-wrap{grid-template-columns:1fr;}
+  }
+
+  /* ===== PRACTICAL INFO ===== */
+  .practical{
+    background:linear-gradient(135deg, var(--nude), var(--cream));
+  }
+  .practical-box{
+    background:var(--white);
+    border-radius:28px;
+    padding:50px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    box-shadow:0 20px 50px rgba(74,59,51,0.08);
+    margin-bottom:24px;
+  }
+  .practical-item{text-align:center;}
+  .practical-item .val{
+    font-size:22px;
+    font-weight:800;
+    color:var(--rose-deep);
+    margin-bottom:4px;
+  }
+  .practical-item .lbl{
+    font-size:13px;
+    color:var(--text-soft);
+  }
+  .practical-note{
+    text-align:center;
+    color:var(--text-soft);
+    font-size:14px;
+    max-width:540px;
+    margin:0 auto;
+  }
+  @media(max-width:760px){
+    .practical-box{grid-template-columns:1fr 1fr; padding:34px 22px;}
+  }
+
+  /* ===== FOR WHOM ===== */
+  .forwhom .container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+  }
+  .forwhom-card{
+    border-radius:20px;
+    padding:36px;
+  }
+  .forwhom-card.yes{
+    background:linear-gradient(160deg, #fff, var(--cream));
+    border:1px solid var(--rose);
+  }
+  .forwhom-card.note{
+    background:var(--white);
+    border:1px solid var(--nude);
+  }
+  .forwhom-card h3{margin-bottom:18px;font-size:19px;}
+  .forwhom-card ul{list-style:none;}
+  .forwhom-card li{
+    display:flex;
+    gap:10px;
+    margin-bottom:12px;
+    color:var(--text-soft);
+    font-size:15px;
+  }
+  .forwhom-card li span{color:var(--rose-deep); font-weight:700;}
+  @media(max-width:760px){
+    .forwhom .container{grid-template-columns:1fr;}
+  }
+
+  /* ===== COMPARISON ===== */
+  .compare{background:var(--cream);}
+  .compare-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+  }
+  .compare-card{
+    background:var(--white);
+    border-radius:22px;
+    padding:34px;
+    border:1px solid var(--nude);
+  }
+  .compare-card.highlight{
+    border:2px solid var(--rose-deep);
+    background:linear-gradient(160deg,#fff,var(--cream));
+  }
+  .compare-card h4{
+    font-size:18px;
+    margin-bottom:12px;
+    color:var(--text);
+  }
+  .compare-card.highlight h4{color:var(--rose-deep);}
+  .compare-card p{color:var(--text-soft);font-size:15px;}
+  @media(max-width:760px){
+    .compare-grid{grid-template-columns:1fr;}
+  }
+
+  /* ===== GRADUATE WITH ===== */
+  .graduate{background:var(--white);}
+  .grad-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .grad-item{
+    text-align:center;
+    padding:30px 20px;
+    background:var(--cream);
+    border-radius:18px;
+    border:1px solid var(--nude);
+    font-size:15px;
+    color:var(--text);
+  }
+  @media(max-width:760px){
+    .grad-grid{grid-template-columns:1fr 1fr;}
+  }
+
+  /* ===== FINAL CTA ===== */
+  .final-cta{
+    text-align:center;
+    background:linear-gradient(135deg, var(--rose-deep), var(--rose));
+    color:#fff;
+    border-radius:32px;
+    padding:70px 30px;
+    margin:0 24px;
+    position:relative;
+    overflow:hidden;
+  }
+  .final-cta h2{
+    font-size:clamp(26px,4vw,36px);
+    margin-bottom:16px;
+    font-weight:800;
+  }
+  .final-cta p{
+    max-width:480px;
+    margin:0 auto 32px;
+    opacity:.92;
+  }
+  .final-cta .btn{
+    background:#fff;
+    color:var(--rose-deep);
+    box-shadow:0 14px 30px rgba(0,0,0,0.18);
+    opacity:1;
+    animation:none;
+  }
+  .final-cta .btn:hover{transform:translateY(-3px);}
+
+  /* ===== FOOTER ===== */
+  footer{
+    text-align:center;
+    padding:40px 24px 30px;
+    color:var(--text-soft);
+    font-size:13px;
+  }
+  footer a{color:var(--rose-deep); text-decoration:none;}
+
+  /* ===== FLOATING WHATSAPP ===== */
+  .wa-float{
+    position:fixed;
+    bottom:24px;
+    left:24px;
+    z-index:99;
+    background:#fff;
+    color:var(--rose-deep);
+    width:60px;height:60px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 30px rgba(168,128,112,.4);
+    text-decoration:none;
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  .wa-float svg{width:30px;height:30px;}
+  @keyframes pulse{
+    0%,100%{box-shadow:0 10px 30px rgba(168,128,112,.4);}
+    50%{box-shadow:0 10px 30px rgba(168,128,112,.7), 0 0 0 10px rgba(168,128,112,.08);}
+  }
+
+  /* ===== MOBILE TUNING ===== */
+  @media(max-width:760px){
+    section{padding:60px 0;}
+    .sec-head{margin-bottom:40px;}
+    .container{padding:0 18px;}
+    .hero{padding:100px 18px 70px; min-height:auto;}
+    .hero-meta{gap:16px;}
+    .divider-dot{height:30px;}
+    .about-card, .kit-box, .checklist, .practical-box{padding:28px 22px;}
+    .session-card{padding:24px 22px;}
+    .compare-card{padding:26px 22px;}
+    .forwhom-card{padding:26px 22px;}
+    .kit-box h3{font-size:21px;}
+    .final-cta{margin:0 14px; padding:50px 22px;}
+  }
+  @media(max-width:480px){
+    .grad-grid{grid-template-columns:1fr;}
+    .practical-box{grid-template-columns:1fr;}
+    .hero-meta{gap:14px 10px;}
+    .hero-meta .num{font-size:20px;}
+    .btn{padding:14px 28px; font-size:15px;}
+    .wa-float{width:52px;height:52px; bottom:18px; left:18px;}
+    .wa-float svg{width:26px;height:26px;}
+  }
+
+  /* ===== LUXURY EXTRAS ===== */
+
+  /* sparkles */
+  .sparkle{
+    position:absolute;
+    border-radius:50%;
+    background:radial-gradient(circle, var(--gold), transparent 70%);
+    opacity:.7;
+    pointer-events:none;
+    animation:sparkleFloat ease-in-out infinite;
+  }
+  @keyframes sparkleFloat{
+    0%,100%{transform:translateY(0) scale(1); opacity:.4;}
+    50%{transform:translateY(-22px) scale(1.3); opacity:.9;}
+  }
+
+  /* shine sweep on buttons */
+  .btn{position:relative; overflow:hidden;}
+  .btn::after{
+    content:"";
+    position:absolute;
+    top:0; left:-60%;
+    width:40%; height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform:skewX(-20deg);
+    animation:shine 3.2s ease-in-out infinite;
+  }
+  @keyframes shine{
+    0%{left:-60%;}
+    35%{left:130%;}
+    100%{left:130%;}
+  }
+
+  /* section divider ornament */
+  .ornament{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin:14px auto 0;
+  }
+  .ornament span{display:block; width:34px; height:1px; background:var(--rose);}
+  .ornament i{
+    width:7px;height:7px;
+    background:var(--gold);
+    transform:rotate(45deg);
+    display:block;
+    box-shadow:0 0 8px rgba(217,185,138,.7);
+  }
+
+  /* check-item luxury pop */
+  .check-item .mark{
+    transition:transform .4s ease, box-shadow .4s ease;
+  }
+  .checklist.show .check-item .mark{
+    animation:popGlow .6s ease both;
+  }
+  .checklist .check-item:nth-child(1) .mark{animation-delay:.05s;}
+  .checklist .check-item:nth-child(2) .mark{animation-delay:.1s;}
+  .checklist .check-item:nth-child(3) .mark{animation-delay:.15s;}
+  .checklist .check-item:nth-child(4) .mark{animation-delay:.2s;}
+  .checklist .check-item:nth-child(5) .mark{animation-delay:.25s;}
+  .checklist .check-item:nth-child(6) .mark{animation-delay:.3s;}
+  .checklist .check-item:nth-child(7) .mark{animation-delay:.35s;}
+  .checklist .check-item:nth-child(8) .mark{animation-delay:.4s;}
+  .checklist .check-item:nth-child(9) .mark{animation-delay:.45s;}
+  .checklist .check-item:nth-child(10) .mark{animation-delay:.5s;}
+  .checklist .check-item:nth-child(11) .mark{animation-delay:.55s;}
+  .checklist .check-item:nth-child(12) .mark{animation-delay:.6s;}
+  .checklist .check-item:nth-child(13) .mark{animation-delay:.65s;}
+  @keyframes popGlow{
+    0%{transform:scale(0); box-shadow:none;}
+    60%{transform:scale(1.25); box-shadow:0 0 14px rgba(217,185,138,.8);}
+    100%{transform:scale(1); box-shadow:0 0 0 rgba(217,185,138,0);}
+  }
+
+  /* forwhom li icon match check-item style */
+  .forwhom-card li{align-items:flex-start;}
+  .forwhom-card li .mark{
+    width:22px;height:22px;
+    border-radius:50%;
+    background:linear-gradient(135deg, var(--rose), var(--gold));
+    color:#fff;
+    flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    font-size:12px;
+    margin-top:2px;
+  }
+
+  /* card hover glow */
+  .session-card, .compare-card, .grad-item, .about-card{
+    transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+  }
+  .session-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 16px 36px rgba(168,128,112,.18);
+    border-color:var(--rose);
+  }
+  .compare-card:hover, .grad-item:hover{
+    transform:translateY(-5px);
+    box-shadow:0 14px 30px rgba(168,128,112,.16);
+  }
+  .about-card:hover{box-shadow:0 16px 36px rgba(168,128,112,.14);}
+
+  /* timeline pulse dot */
+  .session-num{position:relative;}
+  .session-num::before{
+    content:"";
+    position:absolute;
+    inset:-6px;
+    border-radius:50%;
+    border:1px solid var(--rose);
+    opacity:0;
+    animation:ringPulse 2.8s ease-out infinite;
+  }
+  @keyframes ringPulse{
+    0%{transform:scale(.8); opacity:.6;}
+    100%{transform:scale(1.5); opacity:0;}
+  }
+
+  /* kit gold sheen */
+  .kit-box{position:relative; overflow:hidden;}
+  .kit-box::before{
+    content:"";
+    position:absolute;
+    top:-50%; left:-20%;
+    width:60%; height:200%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.18), transparent);
+    transform:rotate(15deg);
+    animation:kitSheen 5s ease-in-out infinite;
+  }
+  @keyframes kitSheen{
+    0%{left:-30%;}
+    50%{left:120%;}
+    100%{left:120%;}
+  }
+
+  /* practice tag hover */
+  .practice-tags span{transition:transform .25s ease, background .25s ease, color .25s ease;}
+  .practice-tags span:hover{
+    transform:translateY(-3px);
+    background:var(--rose-deep);
+    color:#fff;
+  }
+
+  /* hero icon row above title */
+  .hero-icon{
+    width:54px;height:54px;
+    margin:0 auto 18px;
+    opacity:0;
+    animation:fadeUp .8s ease forwards;
+    animation-delay:0s;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="sparkle" style="width:8px;height:8px;top:15%;left:25%;animation-duration:6s;"></span>
+  <span class="sparkle" style="width:6px;height:6px;top:30%;left:75%;animation-duration:5s;animation-delay:.5s;"></span>
+  <span class="sparkle" style="width:10px;height:10px;top:65%;left:20%;animation-duration:7s;animation-delay:1s;"></span>
+  <span class="sparkle" style="width:5px;height:5px;top:70%;left:80%;animation-duration:4.5s;animation-delay:.3s;"></span>
+  <span class="sparkle" style="width:7px;height:7px;top:45%;left:10%;animation-duration:6.5s;animation-delay:.8s;"></span>
+  <span class="sparkle" style="width:6px;height:6px;top:50%;left:90%;animation-duration:5.5s;animation-delay:1.2s;"></span>
+  <div>
+    <svg class="hero-icon" viewBox="0 0 64 64" fill="none">
+      <circle cx="32" cy="32" r="30" stroke="#D9B98A" stroke-width="1.5" opacity="0.5"/>
+      <path d="M32 14 L36 26 L48 26 L38 33 L42 46 L32 38 L22 46 L26 33 L16 26 L28 26 Z" fill="#D9B98A" opacity="0.85"/>
+    </svg>
+    <span class="hero-eyebrow">קורס איפור מקצועי אישי | רבקה אסידון</span>
+    <h1>מהאהבה לאיפור<span>למקצוע אמיתי, בליווי אישי ומעשי</span></h1>
+    <p class="lead">קורס איפור מעשי ואישי שמלמד אותך את יסודות האיפור המקצועי — מהכנת העור ועד איפור ערב וכלות — כולל מזוודת איפור מלאה שתאפשרי לך להתחיל לתרגל ולעבוד כבר במהלך הקורס.</p>
+    <div class="hero-meta">
+      <div><span class="num">6</span><span class="lbl">מפגשים</span></div>
+      <div class="divider-dot"></div>
+      <div><span class="num">1:1</span><span class="lbl">ליווי אישי</span></div>
+      <div class="divider-dot"></div>
+      <div><span class="num">8,000 ₪</span><span class="lbl">מזוודה כלולה</span></div>
+    </div>
+    <div><span class="hero-price-tag">עלות הקורס: 8,970 ₪ — כולל מזוודת איפור מקצועית</span></div>
+    <br>
+    <a href="https://wa.me/972539630415?text=היי%20רבקה!%20אשמח%20לפרטים%20על%20הקורס%20המקצועי%20לאיפור" class="btn" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12 4a8.94 8.94 0 0 0-7.93 13.13L3 21l3.93-1.03A8.9 8.9 0 0 0 12 20.93 8.93 8.93 0 0 0 17.6 6.32ZM12 19.27a7.4 7.4 0 0 1-3.78-1.03l-.27-.16-2.78.73.74-2.71-.18-.28A7.42 7.42 0 1 1 19.4 12a7.43 7.43 0 0 1-7.4 7.27Zm4.07-5.56c-.22-.11-1.3-.64-1.5-.71-.2-.07-.35-.11-.5.11-.15.22-.57.71-.7.86-.13.15-.26.16-.48.05a6.1 6.1 0 0 1-1.8-1.11 6.78 6.78 0 0 1-1.25-1.56c-.13-.22-.01-.34.11-.46.11-.11.25-.29.37-.43a.5.5 0 0 0 .08-.52c-.07-.16-.5-1.2-.69-1.64-.18-.43-.36-.37-.5-.38h-.43a.83.83 0 0 0-.6.28 2.5 2.5 0 0 0-.78 1.86c0 1.1.8 2.16 1 2.32.18.25 1.65 2.52 4 3.43 1.97.77 2.37.62 2.8.58.43-.04 1.3-.53 1.48-1.04.18-.51.18-.95.13-1.04-.05-.1-.2-.16-.46-.27Z"/></svg>
+      שלחי לי פרטים בוואטסאפ
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="container about-grid">
+    <div class="reveal">
+      <span class="sec-eyebrow">קצת עליי</span>
+      <h2 style="margin-bottom:18px;font-size:30px;font-weight:800;">רבקה אסידון, מאפרת מקצועית</h2>
+      <p class="quote-block">איפור נקי, מחמיא ונשי — לחוויה רגועה ובטוחה ביום שלך.</p>
+      <p style="margin-top:22px;color:var(--text-soft);">שש שנים אני מאפרת כלות, מלוות ונשים לאירועים — ולמדתי שהדבר הכי חשוב הוא לא הצבעים על הפלטה, אלא הידיים שיודעות בדיוק מה לעשות על כל סוג פנים, עור ועיניים. בקורס הזה אני מעבירה לך, צעד אחר צעד, את כל מה שאני יודעת — כדי שתוכלי להתחיל לעבוד עם לקוחות בביטחון אמיתי.</p>
+    </div>
+    <div class="about-card reveal">
+      <h3>למה קורס אישי / חצי אישי?</h3>
+      <p>כי כל לקוחה שתאפרי תהיה שונה — מבנה פנים, סוג עור, סגנון אחר. בליווי אישי וצמוד אני עובדת איתך מקרוב, מתאימה את הקצב והדגשים אלייך, ומלווה אותך עד שאת מרגישה בטוחה לבצע את כל הטכניקות בעצמך — בלי ללכת לאיבוד בקבוצה גדולה.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section>
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">מבנה הקורס</span>
+      <h2>6 מפגשים, מסע אחד שלם</h2>
+      <p>מיסודות האיפור ועד עבודה מסכמת, לקוחות ושיווק עצמי</p>
+      <div class="ornament"><span></span><i></i><span></span></div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-line"></div>
+
+      <div class="session reveal">
+        <div class="session-spacer"></div>
+        <div class="session-num">1</div>
+        <div class="session-card">
+          <h4><small>מפגש ראשון</small>יסודות האיפור והכרת הפנים</h4>
+          <p>היכרות עם עולם האיפור המקצועי, סוגי עור, מבני פנים, היגיינה מקצועית, ציוד בסיסי ואיך מאבחנים לקוחה לפני שמתחילים לאפר.</p>
+        </div>
+      </div>
+
+      <div class="session reveal">
+        <div class="session-spacer"></div>
+        <div class="session-num">2</div>
+        <div class="session-card">
+          <h4><small>מפגש שני</small>הכנת עור ומייקאפ מקצועי</h4>
+          <p>לימוד הכנת עור נכונה, התאמת מייקאפ, בחירת גוון ותת־גוון, עבודה בשכבות דקות, קונסילר, פודרה וקיבוע לעמידות.</p>
+        </div>
+      </div>
+
+      <div class="session reveal">
+        <div class="session-spacer"></div>
+        <div class="session-num">3</div>
+        <div class="session-card">
+          <h4><small>מפגש שלישי</small>גבות, עיניים וריסים</h4>
+          <p>מבני עיניים, טשטושי צלליות, אייליינר, מילוי גבות, התאמת ריסים והדבקת ריסים בצורה נקייה ומקצועית.</p>
+        </div>
+      </div>
+
+      <div class="session reveal">
+        <div class="session-spacer"></div>
+        <div class="session-num">4</div>
+        <div class="session-card">
+          <h4><small>מפגש רביעי</small>איפור ערב מלא</h4>
+          <p>בניית לוק ערב מקצועי, שילוב עיניים ושפתיים, סמקים, הצללות, הברקות, התאמת איפור לגיל הלקוחה וצילום תוצאה.</p>
+        </div>
+      </div>
+
+      <div class="session reveal">
+        <div class="session-spacer"></div>
+        <div class="session-num">5</div>
+        <div class="session-card">
+          <h4><small>מפגש חמישי</small>איפור כלות ועמידות ליום שלם</h4>
+          <p>איפור כלה עמיד, טבעי ומחמיא, עבודה מול כלה, פגישת התאמת לוק, איפור לצילום, ועמידות מול דמעות, חום, זיעה וטאצ׳אפים.</p>
+        </div>
+      </div>
+
+      <div class="session reveal">
+        <div class="session-spacer"></div>
+        <div class="session-num">6</div>
+        <div class="session-card">
+          <h4><small>מפגש שישי</small>עבודה מסכמת, לקוחות ושיווק</h4>
+          <p>איפור מלא על מודליסטית, צילום לתיק עבודות, איך לדבר עם לקוחות, איך לתת הצעת מחיר, איך לענות להתנגדויות ואיך להתחיל לפרסם את עצמך.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- KIT -->
+<section class="kit">
+  <div class="container">
+    <div class="kit-box reveal">
+      <div>
+        <h3>מזוודת איפור מקצועית — כלולה בקורס</h3>
+        <p>המזוודה כוללת מוצרים שנבחרו כדי שתוכלי להתחיל לעבוד בצורה מקצועית כבר במהלך הקורס — בלי לבזבז כסף על קניות מיותרות, ובלי לחכות לסיום הלימודים כדי להתחיל לתרגל.</p>
+      </div>
+      <div class="kit-value">
+        <div class="price">8,000 ₪</div>
+        <div class="lbl">שווי המזוודה<br>כלול במחיר הקורס</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDES -->
+<section class="includes">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">מה כלול בקורס</span>
+      <h2>הכל בנוי כדי שתצאי עם תוצאה אמיתית</h2>
+      <div class="ornament"><span></span><i></i><span></span></div>
+    </div>
+    <div class="checklist reveal">
+      <div class="check-item"><span class="mark">✓</span>6 מפגשים מקצועיים ומעשיים</div>
+      <div class="check-item"><span class="mark">✓</span>מזוודת איפור מלאה בשווי 8,000 ₪</div>
+      <div class="check-item"><span class="mark">✓</span>היכרות ולימוד שימוש בכל מוצר במזוודה</div>
+      <div class="check-item"><span class="mark">✓</span>תרגול מעשי במהלך המפגשים</div>
+      <div class="check-item"><span class="mark">✓</span>עבודה על מודליסטיות לפי צורך</div>
+      <div class="check-item"><span class="mark">✓</span>הכנת עור, מייקאפ, עיניים, גבות, ריסים ושפתיים</div>
+      <div class="check-item"><span class="mark">✓</span>איפור ערב ואיפור כלות</div>
+      <div class="check-item"><span class="mark">✓</span>עמידות לאירועים ולחתונות</div>
+      <div class="check-item"><span class="mark">✓</span>צילום תוצאות לתיק עבודות</div>
+      <div class="check-item"><span class="mark">✓</span>הכוונה איך להתחיל לקבל לקוחות</div>
+      <div class="check-item"><span class="mark">✓</span>תסריט בסיסי לשיחה עם לקוחה</div>
+      <div class="check-item"><span class="mark">✓</span>תבנית להצעת מחיר וצ׳קליסט עבודה</div>
+      <div class="check-item"><span class="mark">✓</span>תעודת סיום</div>
+    </div>
+  </div>
+</section>
+
+<!-- SELF PRACTICE -->
+<section class="practice">
+  <div class="container">
+    <div class="practice-wrap">
+      <div class="reveal">
+        <span class="sec-eyebrow">תרגול עצמי בין המפגשים</span>
+        <h2 style="font-size:28px;font-weight:800;margin-bottom:16px;">כדי שתתקדמי באמת, לא רק תלמדי בתיאוריה</h2>
+        <p style="color:var(--text-soft);">הקורס כולל תרגול עצמי בין המפגשים, כדי שתצברי ביטחון אמיתי ותגיעי מוכנה לשיעור הבא. כל תרגיל נבדק ומקבל ממני משוב אישי.</p>
+      </div>
+      <div class="practice-tags reveal">
+        <span>אבחון סוגי עור</span>
+        <span>תרגול הכנת עור</span>
+        <span>מריחת מייקאפ בשכבות דקות</span>
+        <span>טשטושי עיניים</span>
+        <span>הדבקת ריסים</span>
+        <span>איפור ערב מלא</span>
+        <span>צילום עבודות לבדיקה</span>
+        <span>הכנת מודליסטית למפגש הבא</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICAL INFO -->
+<section class="practical">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">פרטים פרקטיים</span>
+      <h2>מה צריך לדעת לפני שמתחילות</h2>
+      <div class="ornament"><span></span><i></i><span></span></div>
+    </div>
+    <div class="practical-box reveal">
+      <div class="practical-item">
+        <div class="val">8,970 ₪</div>
+        <div class="lbl">עלות הקורס (כולל מזוודה)</div>
+      </div>
+      <div class="practical-item">
+        <div class="val">6 מפגשים</div>
+        <div class="lbl">אישיים, אחד על אחד</div>
+      </div>
+      <div class="practical-item">
+        <div class="val">כ-3 שעות</div>
+        <div class="lbl">למפגש</div>
+      </div>
+      <div class="practical-item">
+        <div class="val">מפגש בשבוע</div>
+        <div class="lbl">תדירות מומלצת</div>
+      </div>
+      <div class="practical-item">
+        <div class="val">נתיבות</div>
+        <div class="lbl">בסטודיו של רבקה</div>
+      </div>
+      <div class="practical-item">
+        <div class="val">אישי / חצי אישי</div>
+        <div class="lbl">הדגמה, תרגול וליווי צמוד</div>
+      </div>
+    </div>
+    <p class="practical-note reveal">מפגש בשבוע נותן זמן לתרגל בבית בין מפגש למפגש, ולהגיע מוכנה לשיעור הבא.</p>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section class="forwhom">
+  <div class="container">
+    <div class="forwhom-card yes reveal">
+      <h3>הקורס מתאים לך אם —</h3>
+      <ul>
+        <li><span class="mark">✓</span> את רוצה להיכנס לעולם האיפור המקצועי</li>
+        <li><span class="mark">✓</span> את אוהבת איפור ורוצה להפוך את זה למקצוע</li>
+        <li><span class="mark">✓</span> את מאפרת מתחילה שרוצה בסיס מסודר וביטחון</li>
+        <li><span class="mark">✓</span> את רוצה לדעת לאפר לקוחות לאירועים, ערב וכלות</li>
+        <li><span class="mark">✓</span> חשוב לך יחס אישי, תרגול וליווי צמוד — לא קבוצה גדולה</li>
+      </ul>
+    </div>
+    <div class="forwhom-card note reveal">
+      <h3>חשוב לדעת — למי הקורס פחות מתאים</h3>
+      <p style="color:var(--text-soft);font-size:15px;">הקורס פחות מתאים למי שמחפשת רק סדנת איפור אישי לעצמה. זה קורס מקצועי שמיועד למי שרוצה ללמוד לאפר אחרות, להבין טכניקה, לעבוד נכון עם לקוחות ולהתחיל לבנות דרך בתחום.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="compare">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">שאלה שכדאי לשאול</span>
+      <h2>מה ההבדל מקורס איפור אישי לעצמך?</h2>
+      <div class="ornament"><span></span><i></i><span></span></div>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-card reveal">
+        <h4>קורס איפור אישי</h4>
+        <p>מלמד אותך בעיקר איך לאפר את עצמך — מה מתאים לפנים שלך, איך להתאפר ביום־יום או לאירוע, ואיך להשתמש במוצרים האישיים שלך.</p>
+      </div>
+      <div class="compare-card highlight reveal">
+        <h4>הקורס המקצועי של רבקה</h4>
+        <p>מלמד אותך איך לאפר לקוחות — לזהות סוגי עור, להתאים גוונים, לעבוד עם מבני פנים ועיניים שונים, ליצור איפור ערב וכלה, לשמור על עמידות, לעבוד נקי, לצלם עבודות ולהתחיל לקבל לקוחות.</p>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:30px;color:var(--text-soft);font-size:15px;max-width:560px;margin-inline:auto;">זה לא קורס "להתאפר יפה לעצמך" — זה קורס שמלמד אותך להתחיל לחשוב ולעבוד כמו מאפרת.</p>
+  </div>
+</section>
+
+<!-- GRADUATE WITH -->
+<section class="graduate">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">בסיום הקורס</span>
+      <h2>מה יוצאים איתו בסוף</h2>
+      <div class="ornament"><span></span><i></i><span></span></div>
+    </div>
+    <div class="grad-grid">
+      <div class="grad-item reveal">ידע מקצועי באיפור</div>
+      <div class="grad-item reveal">ביטחון בסיסי מול לקוחות</div>
+      <div class="grad-item reveal">הבנה בהכנת עור ועמידות</div>
+      <div class="grad-item reveal">יכולת לבצע איפור ערב מלא</div>
+      <div class="grad-item reveal">יכולת לבצע לוק כלה עדין ועמיד</div>
+      <div class="grad-item reveal">מזוודת איפור מקצועית</div>
+      <div class="grad-item reveal">תיק עבודות ראשוני</div>
+      <div class="grad-item reveal">תעודת סיום</div>
+      <div class="grad-item reveal">כלים להתחיל לפרסם ולקבל לקוחות ראשונות</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section>
+  <div class="container">
+    <div class="final-cta reveal">
+      <h2>מוכנה להפוך את האהבה לאיפור למקצוע?</h2>
+      <p>השאירי פרטים בוואטסאפ ונקבע יחד את לוח הזמנים שמתאים לך</p>
+      <a href="https://wa.me/972539630415?text=היי%20רבקה!%20אשמח%20להירשם%20לקורס%20המקצועי%20לאיפור" class="btn" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12 4a8.94 8.94 0 0 0-7.93 13.13L3 21l3.93-1.03A8.9 8.9 0 0 0 12 20.93 8.93 8.93 0 0 0 17.6 6.32ZM12 19.27a7.4 7.4 0 0 1-3.78-1.03l-.27-.16-2.78.73.74-2.71-.18-.28A7.42 7.42 0 1 1 19.4 12a7.43 7.43 0 0 1-7.4 7.27Zm4.07-5.56c-.22-.11-1.3-.64-1.5-.71-.2-.07-.35-.11-.5.11-.15.22-.57.71-.7.86-.13.15-.26.16-.48.05a6.1 6.1 0 0 1-1.8-1.11 6.78 6.78 0 0 1-1.25-1.56c-.13-.22-.01-.34.11-.46.11-.11.25-.29.37-.43a.5.5 0 0 0 .08-.52c-.07-.16-.5-1.2-.69-1.64-.18-.43-.36-.37-.5-.38h-.43a.83.83 0 0 0-.6.28 2.5 2.5 0 0 0-.78 1.86c0 1.1.8 2.16 1 2.32.18.25 1.65 2.52 4 3.43 1.97.77 2.37.62 2.8.58.43-.04 1.3-.53 1.48-1.04.18-.51.18-.95.13-1.04-.05-.1-.2-.16-.46-.27Z"/></svg>
+        קביעת פגישת היכרות
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>רבקה אסידון — מאפרת מקצועית | נתיבות</p>
+  <p style="margin-top:6px;">נבנה ע״י <a href="#">ELIAV ASIDON</a></p>
+</footer>
+
+<a class="wa-float" href="https://wa.me/972539630415" target="_blank" aria-label="וואטסאפ">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12 4a8.94 8.94 0 0 0-7.93 13.13L3 21l3.93-1.03A8.9 8.9 0 0 0 12 20.93 8.93 8.93 0 0 0 17.6 6.32ZM12 19.27a7.4 7.4 0 0 1-3.78-1.03l-.27-.16-2.78.73.74-2.71-.18-.28A7.42 7.42 0 1 1 19.4 12a7.43 7.43 0 0 1-7.4 7.27Zm4.07-5.56c-.22-.11-1.3-.64-1.5-.71-.2-.07-.35-.11-.5.11-.15.22-.57.71-.7.86-.13.15-.26.16-.48.05a6.1 6.1 0 0 1-1.8-1.11 6.78 6.78 0 0 1-1.25-1.56c-.13-.22-.01-.34.11-.46.11-.11.25-.29.37-.43a.5.5 0 0 0 .08-.52c-.07-.16-.5-1.2-.69-1.64-.18-.43-.36-.37-.5-.38h-.43a.83.83 0 0 0-.6.28 2.5 2.5 0 0 0-.78 1.86c0 1.1.8 2.16 1 2.32.18.25 1.65 2.52 4 3.43 1.97.77 2.37.62 2.8.58.43-.04 1.3-.53 1.48-1.04.18-.51.18-.95.13-1.04-.05-.1-.2-.16-.46-.27Z"/></svg>
+</a>
+
+<script>
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); } });
+  },{threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
